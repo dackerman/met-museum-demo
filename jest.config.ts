@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^@dackerman/met-museum-demo$': '<rootDir>/src/index.ts',
-    '^@dackerman/met-museum-demo/(.*)$': '<rootDir>/src/$1',
+    '^@dackerman-stainless/met-museum-demo$': '<rootDir>/src/index.ts',
+    '^@dackerman-stainless/met-museum-demo/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

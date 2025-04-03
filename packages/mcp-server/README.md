@@ -18,9 +18,9 @@ Add the following value to your `mcpServers` section. Make sure to provide any n
 ```json
 {
   "mcpServers": {
-    "dackerman_met_museum_demo_api": {
+    "dackerman_stainless_met_museum_demo_api": {
       "command": "npx",
-      "args": ["-y", "@dackerman/met-museum-demo-mcp"],
+      "args": ["-y", "@dackerman-stainless/met-museum-demo-mcp"],
       "env": {
         "MET_MUSEUM_DEMO_API_KEY": "My API Key"
       }
@@ -44,7 +44,7 @@ You can filter by multiple aspects:
 See more information with `--help`:
 
 ```sh
-$ npx -y @dackerman/met-museum-demo-mcp --help
+$ npx -y @dackerman-stainless/met-museum-demo-mcp --help
 ```
 
 All of these command-line options can be repeated, combined together, and have corresponding exclusion versions (e.g. `--no-tool`).

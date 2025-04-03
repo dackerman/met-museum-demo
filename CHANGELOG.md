@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-04-03)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/dackerman/met-museum-demo/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Features
+
+* **api:** update via SDK Studio ([#7](https://github.com/dackerman/met-museum-demo/issues/7)) ([a1f4e6c](https://github.com/dackerman/met-museum-demo/commit/a1f4e6c8217fbe804a1b9d5a15d1b97e5aa55b22))
+
+
+### Chores
+
+* **internal:** version bump ([#5](https://github.com/dackerman/met-museum-demo/issues/5)) ([a545e61](https://github.com/dackerman/met-museum-demo/commit/a545e6156f200e75b10fceb25fb52a5bc5065048))
+
 ## 0.1.0-alpha.1 (2025-04-03)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/dackerman/met-museum-demo/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)

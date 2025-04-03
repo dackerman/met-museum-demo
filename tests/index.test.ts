@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from '@dackerman/met-museum-demo/core/api-promise';
+import { APIPromise } from '@dackerman-stainless/met-museum-demo/core/api-promise';
 
 import util from 'node:util';
-import MetMuseum from '@dackerman/met-museum-demo';
-import { APIUserAbortError } from '@dackerman/met-museum-demo';
+import MetMuseum from '@dackerman-stainless/met-museum-demo';
+import { APIUserAbortError } from '@dackerman-stainless/met-museum-demo';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

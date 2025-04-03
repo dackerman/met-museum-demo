@@ -2,7 +2,7 @@
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import MetMuseum from '@dackerman/met-museum-demo';
+import MetMuseum from '@dackerman-stainless/met-museum-demo';
 
 export const metadata: Metadata = {
   resource: 'objects',
