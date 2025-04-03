@@ -20,7 +20,7 @@ Add the following value to your `mcpServers` section. Make sure to provide any n
   "mcpServers": {
     "dackerman_met_museum_demo_api": {
       "command": "npx",
-      "args": ["-y", "git+ssh://git@github.com:dackerman/met-museum-demo.git:packages/mcp-server"],
+      "args": ["-y", "@dackerman/met-museum-demo-mcp"],
       "env": {
         "MET_MUSEUM_DEMO_API_KEY": "My API Key"
       }
@@ -44,7 +44,7 @@ You can filter by multiple aspects:
 See more information with `--help`:
 
 ```sh
-$ npx -y git+ssh://git@github.com:dackerman/met-museum-demo.git:packages/mcp-server --help
+$ npx -y @dackerman/met-museum-demo-mcp --help
 ```
 
 All of these command-line options can be repeated, combined together, and have corresponding exclusion versions (e.g. `--no-tool`).
