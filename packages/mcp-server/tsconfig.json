@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@dackerman/met-museum-demo-mcp/*": ["src/*"],
-      "@dackerman/met-museum-demo-mcp": ["src/index.ts"]
+      "@dackerman-stainless/met-museum-demo-mcp/*": ["src/*"],
+      "@dackerman-stainless/met-museum-demo-mcp": ["src/index.ts"]
     },
     "noEmit": true,
 

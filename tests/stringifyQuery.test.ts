@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { MetMuseum } from '@dackerman/met-museum-demo';
+import { MetMuseum } from '@dackerman-stainless/met-museum-demo';
 
 const { stringifyQuery } = MetMuseum.prototype as any;
 

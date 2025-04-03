@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^@dackerman/met-museum-demo(/.*)?',
+              regex: '^@dackerman-stainless/met-museum-demo(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],

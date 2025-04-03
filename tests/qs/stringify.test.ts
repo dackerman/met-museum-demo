@@ -1,7 +1,7 @@
 import iconv from 'iconv-lite';
-import { stringify } from '@dackerman/met-museum-demo/internal/qs';
-import { encode } from '@dackerman/met-museum-demo/internal/qs/utils';
-import { StringifyOptions } from '@dackerman/met-museum-demo/internal/qs/types';
+import { stringify } from '@dackerman-stainless/met-museum-demo/internal/qs';
+import { encode } from '@dackerman-stainless/met-museum-demo/internal/qs/utils';
+import { StringifyOptions } from '@dackerman-stainless/met-museum-demo/internal/qs/types';
 import { empty_test_cases } from './empty-keys-cases';
 import assert from 'assert';
 
