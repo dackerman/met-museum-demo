@@ -27,9 +27,9 @@ const client = new MetMuseum({
 });
 
 async function main() {
-  const response = await client.fastapi.doThing({ entry: {} });
+  const object = await client.objects.retrieve(0);
 
-  console.log(response.other_entry);
+  console.log(object.artistWikidata_URL);
 }
 
 main();
@@ -48,8 +48,7 @@ const client = new MetMuseum({
 });
 
 async function main() {
-  const params: MetMuseum.FastapiDoThingParams = { entry: {} };
-  const response: MetMuseum.FastapiDoThingResponse = await client.fastapi.doThing(params);
+  const object: MetMuseum.ObjectRetrieveResponse = await client.objects.retrieve(0);
 }
 
 main();
@@ -66,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const response = await client.fastapi.doThing({ entry: {} }).catch(async (err) => {
+  const object = await client.objects.retrieve(0).catch(async (err) => {
     if (err instanceof MetMuseum.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -109,7 +108,7 @@ const client = new MetMuseum({
 });
 
 // Or, configure per-request:
-await client.fastapi.doThing({ entry: {} }, {
+await client.objects.retrieve(0, {
   maxRetries: 5,
 });
 ```
@@ -126,7 +125,7 @@ const client = new MetMuseum({
 });
 
 // Override per-request:
-await client.fastapi.doThing({ entry: {} }, {
+await client.objects.retrieve(0, {
   timeout: 5 * 1000,
 });
 ```
@@ -149,13 +148,13 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new MetMuseum();
 
-const response = await client.fastapi.doThing({ entry: {} }).asResponse();
+const response = await client.objects.retrieve(0).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.fastapi.doThing({ entry: {} }).withResponse();
+const { data: object, response: raw } = await client.objects.retrieve(0).withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.other_entry);
+console.log(object.artistWikidata_URL);
 ```
 
 ### Logging

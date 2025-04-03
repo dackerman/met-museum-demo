@@ -55,10 +55,6 @@ Use `--list` to see the list of available tools, or see below.
 
 The following tools are available in this MCP server.
 
-### Resource `fastapi`:
-
-- `do_thing_fastapi` (`write`): Do Thing
-
 ### Resource `objects`:
 
 - `retrieve_objects` (`read`): returns a record for an object, containing all open access data about that object, including its image (if the image is available under Open Access)
