@@ -4,13 +4,13 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { endpoints, HandlerFunction } from './tools';
 import { CallToolRequestSchema, ListToolsRequestSchema, Tool } from '@modelcontextprotocol/sdk/types.js';
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 export { endpoints } from './tools';
 
 // Create server instance
 export const server = new McpServer(
   {
-    name: 'met_museum_demo_api',
+    name: 'dackerman_met_museum_demo_api',
     version: '0.0.1-alpha.0',
   },
   {
@@ -26,7 +26,7 @@ export const server = new McpServer(
  */
 export function init(params: {
   server: Server | McpServer;
-  client?: MetMuseumDemo;
+  client?: MetMuseum;
   endpoints?: { tool: Tool; handler: HandlerFunction }[];
 }) {
   const server = params.server instanceof McpServer ? params.server.server : params.server;
@@ -36,7 +36,7 @@ export function init(params: {
     providedEndpoints.map((endpoint) => [endpoint.tool.name, endpoint.handler]),
   );
 
-  const client = params.client || new MetMuseumDemo({});
+  const client = params.client || new MetMuseum({});
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
@@ -61,7 +61,7 @@ export function init(params: {
  */
 export async function executeHandler(
   handler: HandlerFunction,
-  client: MetMuseumDemo,
+  client: MetMuseum,
   args: Record<string, unknown> | undefined,
 ) {
   const result = await handler(client, args || {});

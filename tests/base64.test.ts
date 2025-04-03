@@ -1,4 +1,4 @@
-import { fromBase64, toBase64 } from 'Met-Museum-Demo/internal/utils/base64';
+import { fromBase64, toBase64 } from '@dackerman/met-museum-demo/internal/utils/base64';
 
 describe.each(['Buffer', 'atob'])('with %s', (mode) => {
   let originalBuffer: BufferConstructor;

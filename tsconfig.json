@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "Met-Museum-Demo/*": ["src/*"],
-      "Met-Museum-Demo": ["src/index.ts"]
+      "@dackerman/met-museum-demo/*": ["src/*"],
+      "@dackerman/met-museum-demo": ["src/index.ts"]
     },
     "noEmit": true,
 

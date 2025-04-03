@@ -55,12 +55,12 @@ $ cd met-museum-demo
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link Met-Museum-Demo
+$ yarn link @dackerman/met-museum-demo
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global Met-Museum-Demo
+$ pnpm link -—global @dackerman/met-museum-demo
 ```
 
 ## Running tests
