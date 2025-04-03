@@ -22,7 +22,6 @@ import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { DepartmentListResponse, Departments } from './resources/departments';
-import { Fastapi, FastapiDoThingParams, FastapiDoThingResponse } from './resources/fastapi';
 import { Object, ObjectListParams, ObjectRetrieveResponse, Objects } from './resources/objects';
 import { Search, SearchListParams } from './resources/search';
 import { readEnv } from './internal/utils/env';
@@ -38,7 +37,7 @@ export interface ClientOptions {
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['MET_MUSEUM_DEMO_BASE_URL'].
+   * Defaults to process.env['MET_MUSEUM_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -90,7 +89,7 @@ export interface ClientOptions {
   /**
    * Set the log level.
    *
-   * Defaults to process.env['MET_MUSEUM_DEMO_LOG'] or 'warn' if it isn't set.
+   * Defaults to process.env['MET_MUSEUM_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
 
@@ -103,9 +102,9 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Met Museum Demo API.
+ * API Client for interfacing with the Met Museum API.
  */
-export class MetMuseumDemo {
+export class MetMuseum {
   apiKey: string | null;
 
   baseURL: string;
@@ -121,10 +120,10 @@ export class MetMuseumDemo {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Met Museum Demo API.
+   * API Client for interfacing with the Met Museum API.
    *
    * @param {string | null | undefined} [opts.apiKey=process.env['MET_MUSEUM_DEMO_API_KEY'] ?? null]
-   * @param {string} [opts.baseURL=process.env['MET_MUSEUM_DEMO_BASE_URL'] ?? https://collectionapi.metmuseum.org/public/collection/v1] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['MET_MUSEUM_BASE_URL'] ?? https://collectionapi.metmuseum.org/public/collection/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -133,7 +132,7 @@ export class MetMuseumDemo {
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = readEnv('MET_MUSEUM_DEMO_BASE_URL'),
+    baseURL = readEnv('MET_MUSEUM_BASE_URL'),
     apiKey = readEnv('MET_MUSEUM_DEMO_API_KEY') ?? null,
     ...opts
   }: ClientOptions = {}) {
@@ -144,14 +143,14 @@ export class MetMuseumDemo {
     };
 
     this.baseURL = options.baseURL!;
-    this.timeout = options.timeout ?? MetMuseumDemo.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? MetMuseum.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
     this.logLevel = defaultLogLevel;
     this.logLevel =
       parseLogLevel(options.logLevel, 'ClientOptions.logLevel', this) ??
-      parseLogLevel(readEnv('MET_MUSEUM_DEMO_LOG'), "process.env['MET_MUSEUM_DEMO_LOG']", this) ??
+      parseLogLevel(readEnv('MET_MUSEUM_LOG'), "process.env['MET_MUSEUM_LOG']", this) ??
       defaultLogLevel;
     this.fetchOptions = options.fetchOptions;
     this.maxRetries = options.maxRetries ?? 2;
@@ -649,10 +648,10 @@ export class MetMuseumDemo {
     }
   }
 
-  static MetMuseumDemo = this;
+  static MetMuseum = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static MetMuseumDemoError = Errors.MetMuseumDemoError;
+  static MetMuseumError = Errors.MetMuseumError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -668,23 +667,15 @@ export class MetMuseumDemo {
 
   static toFile = Uploads.toFile;
 
-  fastapi: API.Fastapi = new API.Fastapi(this);
   objects: API.Objects = new API.Objects(this);
   departments: API.Departments = new API.Departments(this);
   search: API.Search = new API.Search(this);
 }
-MetMuseumDemo.Fastapi = Fastapi;
-MetMuseumDemo.Objects = Objects;
-MetMuseumDemo.Departments = Departments;
-MetMuseumDemo.Search = Search;
-export declare namespace MetMuseumDemo {
+MetMuseum.Objects = Objects;
+MetMuseum.Departments = Departments;
+MetMuseum.Search = Search;
+export declare namespace MetMuseum {
   export type RequestOptions = Opts.RequestOptions;
-
-  export {
-    Fastapi as Fastapi,
-    type FastapiDoThingResponse as FastapiDoThingResponse,
-    type FastapiDoThingParams as FastapiDoThingParams,
-  };
 
   export {
     Objects as Objects,

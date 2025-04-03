@@ -1,13 +1,3 @@
-# Fastapi
-
-Types:
-
-- <code><a href="./src/resources/fastapi.ts">FastapiDoThingResponse</a></code>
-
-Methods:
-
-- <code title="post /fastapi">client.fastapi.<a href="./src/resources/fastapi.ts">doThing</a>({ ...params }) -> FastapiDoThingResponse</code>
-
 # Objects
 
 Types:

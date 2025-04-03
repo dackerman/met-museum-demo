@@ -1,15 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 
-import do_thing_fastapi from './fastapi/do-thing-fastapi';
 import retrieve_objects from './objects/retrieve-objects';
 import list_objects from './objects/list-objects';
 import list_departments from './departments/list-departments';
 import list_search from './search/list-search';
 
-export type HandlerFunction = (client: MetMuseumDemo, args: any) => Promise<any>;
+export type HandlerFunction = (client: MetMuseum, args: any) => Promise<any>;
 
 export type Metadata = {
   resource: string;
@@ -29,7 +28,6 @@ function addEndpoint(endpoint: Endpoint) {
   endpoints.push(endpoint);
 }
 
-addEndpoint(do_thing_fastapi);
 addEndpoint(retrieve_objects);
 addEndpoint(list_objects);
 addEndpoint(list_departments);
