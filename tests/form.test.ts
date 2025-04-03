@@ -1,5 +1,8 @@
-import { multipartFormRequestOptions, createForm } from '@dackerman/met-museum-demo/internal/uploads';
-import { toFile } from '@dackerman/met-museum-demo/core/uploads';
+import {
+  multipartFormRequestOptions,
+  createForm,
+} from '@dackerman-stainless/met-museum-demo/internal/uploads';
+import { toFile } from '@dackerman-stainless/met-museum-demo/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

@@ -3,7 +3,7 @@ import {
   merge,
   is_buffer,
   assign_single_source,
-} from '@dackerman/met-museum-demo/internal/qs/utils';
+} from '@dackerman-stainless/met-museum-demo/internal/qs/utils';
 
 describe('merge()', function () {
   // t.deepEqual(merge(null, true), [null, true], 'merges true into null');

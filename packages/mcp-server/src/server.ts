@@ -4,13 +4,13 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { endpoints, HandlerFunction } from './tools';
 import { CallToolRequestSchema, ListToolsRequestSchema, Tool } from '@modelcontextprotocol/sdk/types.js';
-import MetMuseum from '@dackerman/met-museum-demo';
+import MetMuseum from '@dackerman-stainless/met-museum-demo';
 export { endpoints } from './tools';
 
 // Create server instance
 export const server = new McpServer(
   {
-    name: 'dackerman_met_museum_demo_api',
+    name: 'dackerman_stainless_met_museum_demo_api',
     version: '0.1.0-alpha.1',
   },
   {
