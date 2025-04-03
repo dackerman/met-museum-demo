@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
@@ -40,6 +40,6 @@ describe('resource objects', () => {
         { departmentIds: [0], metadataDate: '2019-12-27' },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(MetMuseumDemo.NotFoundError);
+    ).rejects.toThrow(MetMuseum.NotFoundError);
   });
 });

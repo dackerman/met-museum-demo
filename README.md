@@ -1,8 +1,8 @@
-# Met Museum Demo TypeScript API Library
+# Met Museum TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/Met-Museum-Demo.svg)](https://npmjs.org/package/Met-Museum-Demo) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/Met-Museum-Demo)
+[![NPM version](https://img.shields.io/npm/v/@dackerman/met-museum-demo.svg)](https://npmjs.org/package/@dackerman/met-museum-demo) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dackerman/met-museum-demo)
 
-This library provides convenient access to the Met Museum Demo REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the Met Museum REST API from server-side TypeScript or JavaScript.
 
 The REST API documentation can be found on [docs.met-museum-demo.com](https://docs.Met-Museum-Demo.com). The full API of this library can be found in [api.md](api.md).
 
@@ -15,7 +15,7 @@ npm install git+ssh://git@github.com:dackerman/met-museum-demo.git
 ```
 
 > [!NOTE]
-> Once this package is [published to npm](https://app.stainless.com/docs/guides/publish), this will become: `npm install Met-Museum-Demo`
+> Once this package is [published to npm](https://app.stainless.com/docs/guides/publish), this will become: `npm install @dackerman/met-museum-demo`
 
 ## Usage
 
@@ -23,9 +23,9 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   apiKey: process.env['MET_MUSEUM_DEMO_API_KEY'], // This is the default and can be omitted
 });
 
@@ -44,15 +44,15 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   apiKey: process.env['MET_MUSEUM_DEMO_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const params: MetMuseumDemo.FastapiDoThingParams = { entry: {} };
-  const response: MetMuseumDemo.FastapiDoThingResponse = await client.fastapi.doThing(params);
+  const params: MetMuseum.FastapiDoThingParams = { entry: {} };
+  const response: MetMuseum.FastapiDoThingResponse = await client.fastapi.doThing(params);
 }
 
 main();
@@ -70,7 +70,7 @@ a subclass of `APIError` will be thrown:
 ```ts
 async function main() {
   const response = await client.fastapi.doThing({ entry: {} }).catch(async (err) => {
-    if (err instanceof MetMuseumDemo.APIError) {
+    if (err instanceof MetMuseum.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
       console.log(err.headers); // {server: 'nginx', ...}
@@ -107,7 +107,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   maxRetries: 0, // default is 2
 });
 
@@ -124,7 +124,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -150,7 +150,7 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 
 <!-- prettier-ignore -->
 ```ts
-const client = new MetMuseumDemo();
+const client = new MetMuseum();
 
 const response = await client.fastapi.doThing({ entry: {} }).asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -171,13 +171,13 @@ console.log(response.other_entry);
 
 The log level can be configured in two ways:
 
-1. Via the `MET_MUSEUM_DEMO_LOG` environment variable
+1. Via the `MET_MUSEUM_LOG` environment variable
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   logLevel: 'debug', // Show all log messages
 });
 ```
@@ -203,13 +203,13 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 import pino from 'pino';
 
 const logger = pino();
 
-const client = new MetMuseumDemo({
-  logger: logger.child({ name: 'MetMuseumDemo' }),
+const client = new MetMuseum({
+  logger: logger.child({ name: 'MetMuseum' }),
   logLevel: 'debug', // Send all messages to pino, allowing it to filter
 });
 ```
@@ -273,10 +273,10 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 import fetch from 'my-fetch';
 
-const client = new MetMuseumDemo({ fetch });
+const client = new MetMuseum({ fetch });
 ```
 
 ### Fetch options
@@ -284,9 +284,9 @@ const client = new MetMuseumDemo({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   fetchOptions: {
     // `RequestInit` options
   },
@@ -301,11 +301,11 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   fetchOptions: {
     dispatcher: proxyAgent,
   },
@@ -315,9 +315,9 @@ const client = new MetMuseumDemo({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   fetchOptions: {
     proxy: 'http://localhost:8888',
   },
@@ -327,10 +327,10 @@ const client = new MetMuseumDemo({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import MetMuseumDemo from 'npm:Met-Museum-Demo';
+import MetMuseum from 'npm:@dackerman/met-museum-demo';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
-const client = new MetMuseumDemo({
+const client = new MetMuseum({
   fetchOptions: {
     client: httpClient,
   },

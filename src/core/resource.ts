@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import type { MetMuseumDemo } from '../client';
+import type { MetMuseum } from '../client';
 
 export class APIResource {
-  protected _client: MetMuseumDemo;
+  protected _client: MetMuseum;
 
-  constructor(client: MetMuseumDemo) {
+  constructor(client: MetMuseum) {
     this._client = client;
   }
 }
