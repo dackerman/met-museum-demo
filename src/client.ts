@@ -22,7 +22,6 @@ import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import { DepartmentListResponse, Departments } from './resources/departments';
-import { Fastapi, FastapiDoThingParams, FastapiDoThingResponse } from './resources/fastapi';
 import { Object, ObjectListParams, ObjectRetrieveResponse, Objects } from './resources/objects';
 import { Search, SearchListParams } from './resources/search';
 import { readEnv } from './internal/utils/env';
@@ -668,23 +667,15 @@ export class MetMuseum {
 
   static toFile = Uploads.toFile;
 
-  fastapi: API.Fastapi = new API.Fastapi(this);
   objects: API.Objects = new API.Objects(this);
   departments: API.Departments = new API.Departments(this);
   search: API.Search = new API.Search(this);
 }
-MetMuseum.Fastapi = Fastapi;
 MetMuseum.Objects = Objects;
 MetMuseum.Departments = Departments;
 MetMuseum.Search = Search;
 export declare namespace MetMuseum {
   export type RequestOptions = Opts.RequestOptions;
-
-  export {
-    Fastapi as Fastapi,
-    type FastapiDoThingResponse as FastapiDoThingResponse,
-    type FastapiDoThingParams as FastapiDoThingParams,
-  };
 
   export {
     Objects as Objects,
