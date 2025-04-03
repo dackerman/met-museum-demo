@@ -1,0 +1,4 @@
+configured_endpoints: 5
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/dackerman%2FMet-Museum-Demo-1b8443a6bdc8469a424b4ce43646c098311fbec1fe1c02661ee03f58a02f1f95.yml
+openapi_spec_hash: b5b48cac9092e2a5451da71586fe1d7a
+config_hash: 4e56973c0e7c33e59de80ffe2f4aa67e
