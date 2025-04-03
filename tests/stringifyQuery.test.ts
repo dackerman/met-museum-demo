@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { MetMuseumDemo } from 'Met-Museum-Demo';
+import { MetMuseum } from '@dackerman/met-museum-demo';
 
-const { stringifyQuery } = MetMuseumDemo.prototype as any;
+const { stringifyQuery } = MetMuseum.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [

@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'Met-Museum-Demo/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from '@dackerman/met-museum-demo/internal/utils/path';
 import { inspect } from 'node:util';
 
 describe('path template tag function', () => {

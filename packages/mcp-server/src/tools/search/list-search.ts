@@ -2,7 +2,7 @@
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import MetMuseumDemo from 'Met-Museum-Demo';
+import MetMuseum from '@dackerman/met-museum-demo';
 
 export const metadata: Metadata = {
   resource: 'search',
@@ -78,7 +78,7 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: MetMuseumDemo, args: any) => {
+export const handler = (client: MetMuseum, args: any) => {
   const { ...body } = args;
   return client.search.list(body);
 };

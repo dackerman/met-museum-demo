@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "Met-Museum-Demo-mcp/*": ["src/*"],
-      "Met-Museum-Demo-mcp": ["src/index.ts"]
+      "@dackerman/met-museum-demo-mcp/*": ["src/*"],
+      "@dackerman/met-museum-demo-mcp": ["src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

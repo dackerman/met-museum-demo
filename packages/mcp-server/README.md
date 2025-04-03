@@ -1,4 +1,4 @@
-# Met Museum Demo TypeScript MCP Server
+# Met Museum TypeScript MCP Server
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -18,7 +18,7 @@ Add the following value to your `mcpServers` section. Make sure to provide any n
 ```json
 {
   "mcpServers": {
-    "met_museum_demo_api": {
+    "dackerman_met_museum_demo_api": {
       "command": "npx",
       "args": ["-y", "git+ssh://git@github.com:dackerman/met-museum-demo.git:packages/mcp-server"],
       "env": {
