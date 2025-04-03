@@ -1,5 +1,5 @@
 {
-  "name": "@dackerman/met-museum-demo",
+  "name": "@dackerman-stainless/met-museum-demo",
   "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Met Museum API",
   "author": "Met Museum <dev-feedback@Met-Museum-Demo.com>",
@@ -50,8 +50,8 @@
     "synckit": "0.8.8"
   },
   "imports": {
-    "@dackerman/met-museum-demo": ".",
-    "@dackerman/met-museum-demo/*": "./src/*"
+    "@dackerman-stainless/met-museum-demo": ".",
+    "@dackerman-stainless/met-museum-demo/*": "./src/*"
   },
   "exports": {
     ".": {

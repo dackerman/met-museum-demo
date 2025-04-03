@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import MetMuseum from '@dackerman/met-museum-demo';
+import MetMuseum from '@dackerman-stainless/met-museum-demo';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 
 import retrieve_objects from './objects/retrieve-objects';
