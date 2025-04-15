@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-04-15)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/dackerman/met-museum-demo/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* **api:** update via SDK Studio ([#11](https://github.com/dackerman/met-museum-demo/issues/11)) ([1a21d67](https://github.com/dackerman/met-museum-demo/commit/1a21d6727fc95e6cd2a4bd126b5c57325b501f81))
+* **api:** update via SDK Studio ([#13](https://github.com/dackerman/met-museum-demo/issues/13)) ([ddd709d](https://github.com/dackerman/met-museum-demo/commit/ddd709d10dcf37e8397b683ce4f490a20f358841))
+* **api:** update via SDK Studio ([#15](https://github.com/dackerman/met-museum-demo/issues/15)) ([23b2a3d](https://github.com/dackerman/met-museum-demo/commit/23b2a3da7866015ce6be11d1506591c110db4adb))
+* **api:** update via SDK Studio ([#19](https://github.com/dackerman/met-museum-demo/issues/19)) ([5e9d515](https://github.com/dackerman/met-museum-demo/commit/5e9d515a06cbac6063de10df1986dc8ebe3ec093))
+* **api:** update via SDK Studio ([#21](https://github.com/dackerman/met-museum-demo/issues/21)) ([44a0baf](https://github.com/dackerman/met-museum-demo/commit/44a0baf6224badd32a588895bf576d56384e2d4e))
+
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#17](https://github.com/dackerman/met-museum-demo/issues/17)) ([4f52c11](https://github.com/dackerman/met-museum-demo/commit/4f52c112585ae8f475b8a552799957cf08f96521))
+* **client:** send all configured auth headers ([#23](https://github.com/dackerman/met-museum-demo/issues/23)) ([1a3e730](https://github.com/dackerman/met-museum-demo/commit/1a3e730c090844f21798ce3cd0ac9e12173f2e35))
+* **internal:** fix file uploads in node 18 jest ([9fb6a40](https://github.com/dackerman/met-museum-demo/commit/9fb6a40c8b5e148548ce3d9f12cc9f68d8dd3be2))
+* **mcp:** remove unused tools.ts ([#22](https://github.com/dackerman/met-museum-demo/issues/22)) ([c942db2](https://github.com/dackerman/met-museum-demo/commit/c942db2e588057220b58b8af5bd1ced39823ae1f))
+
+
+### Chores
+
+* **client:** minor internal fixes ([1b0b288](https://github.com/dackerman/met-museum-demo/commit/1b0b28830b7832e359d997e213c181ffbee687e7))
+* configure new SDK language ([#12](https://github.com/dackerman/met-museum-demo/issues/12)) ([c019638](https://github.com/dackerman/met-museum-demo/commit/c019638273c03927a517b86ff5880139a924b22d))
+* configure new SDK language ([#14](https://github.com/dackerman/met-museum-demo/issues/14)) ([29483d2](https://github.com/dackerman/met-museum-demo/commit/29483d20662d3de23a3bb9c00d125fe7f6b87f90))
+* configure new SDK language ([#16](https://github.com/dackerman/met-museum-demo/issues/16)) ([3bc57e4](https://github.com/dackerman/met-museum-demo/commit/3bc57e47a629c5ac0518f1a77134088be8605f99))
+* configure new SDK language ([#20](https://github.com/dackerman/met-museum-demo/issues/20)) ([fc9f6eb](https://github.com/dackerman/met-museum-demo/commit/fc9f6ebf7c1265ff8a3f6b57afb5d434cb9424bf))
+* **internal:** improve node 18 shims ([4003b94](https://github.com/dackerman/met-museum-demo/commit/4003b94ddea218739dbf79f181193c122c7bdb1e))
+* **internal:** reduce CI branch coverage ([df456e3](https://github.com/dackerman/met-museum-demo/commit/df456e3b3736b6eb9eaf33a1b26831381bae1e13))
+* **internal:** upload builds and expand CI branch coverage ([3fa47fd](https://github.com/dackerman/met-museum-demo/commit/3fa47fd652803e14e64a0ff20eb0d8b3861854fa))
+* **internal:** version bump ([#8](https://github.com/dackerman/met-museum-demo/issues/8)) ([d71a35d](https://github.com/dackerman/met-museum-demo/commit/d71a35dcf3db467682bd28c0d99fe8c28d235df1))
+
+
+### Documentation
+
+* **mcp:** improve MCP readme docs ([#18](https://github.com/dackerman/met-museum-demo/issues/18)) ([53e2683](https://github.com/dackerman/met-museum-demo/commit/53e268388891e7fb6b578cc3452aa42881bf9790))
+
 ## 0.1.0-alpha.2 (2025-04-03)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/dackerman/met-museum-demo/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
