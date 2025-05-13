@@ -6,7 +6,7 @@
     "rootDir": "./dist/src",
     "paths": {
       "@dackerman-stainless/met-museum-demo/*": ["dist/src/*"],
-      "@dackerman-stainless/met-museum-demo": ["dist/src/index.ts"],
+      "@dackerman-stainless/met-museum-demo": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
