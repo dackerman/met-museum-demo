@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'objects',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/objects/{objectId}',
+  operationId: 'object',
 };
 
 export const tool: Tool = {
@@ -24,8 +27,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: MetMuseum, args: any) => {
-  const { objectId } = args;
+export const handler = (client: MetMuseum, args: Record<string, unknown> | undefined) => {
+  const { objectId, ...body } = args as any;
   return client.objects.retrieve(objectId);
 };
 
