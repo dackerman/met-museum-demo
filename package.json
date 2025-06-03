@@ -1,6 +1,6 @@
 {
   "name": "@dackerman-stainless/met-museum-demo",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "The official TypeScript library for the Met Museum API",
   "author": "Met Museum <dev-feedback@Met-Museum-Demo.com>",
   "types": "dist/index.d.ts",
