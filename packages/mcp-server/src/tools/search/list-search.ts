@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'search',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/search',
+  operationId: 'search',
 };
 
 export const tool: Tool = {
@@ -78,8 +81,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: MetMuseum, args: any) => {
-  const { ...body } = args;
+export const handler = (client: MetMuseum, args: Record<string, unknown> | undefined) => {
+  const body = args as any;
   return client.search.list(body);
 };
 

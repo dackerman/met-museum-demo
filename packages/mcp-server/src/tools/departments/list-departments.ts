@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'departments',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/departments',
+  operationId: 'departments',
 };
 
 export const tool: Tool = {
@@ -19,8 +22,7 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: MetMuseum, args: any) => {
-  const {} = args;
+export const handler = (client: MetMuseum, args: Record<string, unknown> | undefined) => {
   return client.departments.list();
 };
 
